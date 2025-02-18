@@ -1,13 +1,20 @@
-// LED is connected to pin 13
+// Extension 3: PWM LED brightness control
 int led = 13;
 
 void setup() {
-  pinMode(led, OUTPUT); // set the LED pin as output
+  pinMode(led, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(led, HIGH); // turn LED on
-  delay(1000); // wait 1 second
-  digitalWrite(led, LOW); // turn LED off
-  delay(1000); // wait 1 second
+  // Gradually increase LED brightness
+  analogWrite(led, 31);  // 12% brightness
+  delay(1000);
+  analogWrite(led, 63);  // 25% brightness
+  delay(1000); 
+  analogWrite(led, 127);  // 50% brightness
+  delay(1000);
+  analogWrite(led, 191);  // 75% brightness
+  delay(1000);
+  analogWrite(led, 255);  // full brightness
+  delay(1000);
 }
